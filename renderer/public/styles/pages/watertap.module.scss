@@ -1,0 +1,21 @@
+@import '../mixin.scss';
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 24px;
+    min-height: 100vh;
+}
+
+.dashBox{
+    @include hoverAnimation();
+    text-align: center;
+    border: 1px solid;
+    border-style: dashed;
+    padding: 7px;
+    &:hover{
+        background-color: #f9f9f9;
+    }
+}

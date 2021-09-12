@@ -1,0 +1,15 @@
+@import '../../../public/styles/mixin.scss';
+
+.text{
+    @include hoverAnimation();
+    border: 1px solid rgb(100, 100, 100);
+    // text-align: center;
+    // width: 100%;
+    padding: 8px;
+    background-color: white;
+    &[noAnim]{
+        &:hover{
+            transform: none;
+        }
+    }
+}

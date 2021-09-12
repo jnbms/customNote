@@ -1,0 +1,45 @@
+@import '../../../public/styles/mixin.scss';
+
+.title{
+    margin: 8px;
+}
+.tools{
+
+    display: flex;
+    flex-direction: column;
+
+    width: 525px;
+    margin: 4px;
+
+    padding: 8px;
+    text-align: center;
+
+}
+.view{
+
+    width: 525px;
+
+    margin: 4px;
+
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.textarea{
+    @include clickAnimation();
+
+    resize:none;
+    outline: none;
+    border: 1px solid rgb(100, 100, 100);
+    font-family: bujang;
+    font-size: 24px;
+    // height:auto;
+    width: 500px;
+    padding: 12px;
+    margin: 8px;
+    max-height: 500px;
+
+    // background: repeating-linear-gradient(to bottom,rgba(255, 255, 255, 0) 45%,rgb(0, 0, 0) 100%);
+}
+

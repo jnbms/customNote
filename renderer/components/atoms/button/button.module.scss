@@ -1,0 +1,11 @@
+@import '../../../public/styles/mixin.scss';
+
+.button{
+
+    &[border]{
+        @include hoverAnimation();
+        border: 1px solid rgb(100, 100, 100);
+        padding-inline: 12px;
+        margin: 12px;
+    }
+}
