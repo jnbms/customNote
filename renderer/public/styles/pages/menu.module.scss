@@ -8,20 +8,15 @@
     display: flex;
     flex-direction: column;
     // align-items: center;
-    row-gap: 16px;
+    // row-gap: 16px;
     align-items: center;
-    width: 50%;
+    // width: 50%;
 }
 
 .dashBox{
-    @include hoverAnimation();
-    text-align: center;
+    // @include hoverAnimation();
     border: 1px solid;
     border-style: dashed;
-    width: 100%;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    // height: 24px;
     &:hover{
         background-color: #f9f9f9;
     }
