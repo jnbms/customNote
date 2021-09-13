@@ -16,16 +16,15 @@ function WaterTap(){
                     </div>
                     <div className="column" style={{justifyContent:'center',rowGap:12,width:400}}>
                         <div>{selectedDay.month}월 {selectedDay.day}일 LIST</div>
-                        <Text>
+                        <Text isHover="true">
                             <span>제목없음</span>
                             <span> : 3821 자,(목표량의 80% 달성)</span>
                         </Text>
-                        <Text>제목없음</Text>
-                        <Link href="/writer"><div className={styles.dashBox}>(+)</div></Link>
+                        <Link href="/writer"><div className={styles.dashBox}>작성하기 (+)</div></Link>
                     </div>  
                 </div>
                 <Link href='/menu'>PREV</Link>
-                <div className=""> 300 DORA</div>
+                {/* <div className=""> 300 DORA</div> */}
 
             </div>
         </Fragment>

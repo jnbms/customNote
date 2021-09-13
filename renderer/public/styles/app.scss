@@ -1,14 +1,19 @@
 @import './mixin.scss';
 
-@font-face {
+@font-face{
     font-family: bujang;
     src: url('../fonts/bujang.ttf');
+}
+@font-face{
+    font-family: happy;
+    src: url('../fonts//happy.ttf');
 }
 
 html,body{
     margin: 0; padding: 0;
-    font-family: bujang;
-    font-size: 24px;
+    // font-family: bujang;
+    font-family: happy;
+    font-size: 22px;
     user-select: none;
 
     // darkmode
@@ -93,4 +98,16 @@ a{
     // opacity: 2;
     background-color: white;
     transition: 1s;
+}
+.full{
+    height: 100vh;
+    width: 100vw;
+}
+.titleText{
+    font-size: 28px;
+    // text-decoration: underline;   
+}
+.subTitleText{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
 }

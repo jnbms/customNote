@@ -14,14 +14,14 @@ function Input(){
     const onlyTextSize = text.replace(/\s/g,'').length;
     const whiteSpaceSize = textSize - onlyTextSize;
 
-    const [question,setQuestion] = useState("솔직한 내맘");
-    const [description,setDescription] = useState("오우 힘들긴 하네");
+    const [question,setQuestion] = useState("사건을 파악하기");
+    const [description,setDescription] = useState("어떤 지 정확히 파악하기");
 
     return (
         <Fragment>
             <div id="tools" className={styles.tools}>
-                <div className={styles.title}>{question}</div>
-                <div style={{fontSize:'16px'}}>"{description}"</div>
+                <h3 className={styles.title}>{question}</h3>
+                <div>"{description}"</div>
             </div>
             <textarea 
                 spellCheck="false"

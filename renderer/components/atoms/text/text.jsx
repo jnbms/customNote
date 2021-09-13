@@ -3,9 +3,9 @@ import styles from './text.module.scss';
 
 function Text(props){
     
-    const {children} = props;
+    const {children, isHover} = props;
 
-    return <div className={styles.text}>
+    return <div isHover={isHover} className={styles.text}>
         {children}
     </div>;
 }
