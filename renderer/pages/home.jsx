@@ -18,7 +18,7 @@ function Home() {
             </Space>
             <Link href='/menu'>
               <Size height="1.5em" width="3em">
-              <Button className="buttonHoverAnimation">
+              <Button borderStyle="solid" className="buttonHoverAnimation">
                 <Center>
                   <Text size="1" content="시작"/>
                 </Center>

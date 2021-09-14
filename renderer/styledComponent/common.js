@@ -1,24 +1,29 @@
 import styled from "styled-components";
 
-const Column = styled.div`
+// MIXIN
+const height = props => ({height:props.height});
+const width = props => ({width:props.width});
+
+// EXTENDS
+const contain = styled.div`
     height: 100%; width: 100%;
+`
+
+const Column = styled(contain)`
     display: flex; flex-direction: column;
     justify-content: ${props => props.justify};
     align-items: ${props => props.align};
-`;
+`
 
-// export default column;
-
-const Row = styled.div`
-    height: 100%; width: 100%;
+const Row = styled(contain)`
     display: flex; flex-direction: row;
     justify-content: ${props => props.justify};
     align-items: ${props => props.align};
 `
 
 const Size = styled.div`
-    height: ${props => props.height};
-    width: ${props => props.width};
+    ${height}
+    ${width}
 `
 
 const Text = styled.div`
@@ -30,8 +35,8 @@ const Space = styled.div`
 `
 const Button = styled.div`
     height: 100%; width: 100%;
-    border: 1px solid;
-
+    border: 1px none;
+    border-style: ${props=>props.borderStyle};
 `
 const Center = styled.div`
     height: 100%; width: 100%;

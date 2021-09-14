@@ -1,10 +1,28 @@
-import React, { Fragment, useState } from 'react';
+import React, {useState} from 'react';
 import Link from 'next/link';
 import Textarea from '../components/atoms/textarea/textarea';
-import Button from '../components/atoms/button/button';
+// import Button from '../components/atoms/button/button';
+import { Column, Row, Size, Center, Button} from '../styledComponent/common';
+import Text from '../bones/Text';
+import useInput from '../hooks/useInput';
+
+// const useInput = (initialValue) => {
+//     const [value, setValue] = useState(initialValue);
+//     const onChange = (event) => {
+//         const {target: {value}} = event;
+//         setValue(value)
+//         console.log(value);
+//     }
+//     return {value, onChange};
+// }
 
 export default function Createmenu() {
 
+    const title = useInput();
+    const subtitle = useInput();
+    const save = () => {
+        console.log(title.value, subtitle.value);
+    }
     const obj = {
         title: "제목",
         subtitle : [
@@ -21,34 +39,35 @@ export default function Createmenu() {
         ]
     }
     return (
-        // <div>
-        //     <div className="center full" style={{width:'100%'}}>
-        //         <div className="column flexCenter" style={{gap:24,width:'50%'}}>
-        //                 <div className="column flexCenter" style={{width:'100%',gap:8}}>
-        //                     <div className="titleText">제목.</div>
-        //                     {/* <div className="subTitleText">"어떤 주제에 대해 다룰건가요?"</div> */}
+        <Size height="100vh">
+           <Center>
+                <Size width="50%" height="50%">
+                     <Column justify="center" align="center" style={{gap:16}}>
+                         
+                        <Column align="flex-start" style={{gap:8}}>
+                            <Text size="1.1" content="제목."/>
+                            <Textarea {...title}></Textarea>
+                        </Column>
 
-        //                     <Textarea onChange={(e)=>{titleOne = e;console.log(titleOne)}}></Textarea>
-        //                 </div>
+                        <Column align="flex-start" style={{gap:8}}>
+                        <Text size="1.1" content="설명."/>
+                            <Textarea {...subtitle}></Textarea>
+                        </Column>
 
-        //                 <div className="column flexCenter" style={{width:'100%',gap:8}}>
-        //                     <div className="titleText">설명.</div>
-        //                     {/* <div className="subTitleText">"어떤 목적을 달성하기 위해 작성하나요?"</div> */}
-        //                     <Textarea onChange={(e)=>setConfig({...config,subtitle:e.target.value})}></Textarea>
-        //                 </div>
+                    {/* PAGE에 바로 오지 않고 molecules로 제작하여 가져오도록 수정. */}
+                    <Row justify="space-evenly" className="buttonGroupHoverScale">
+                        <Text size="0.8" content="◁ 이전으로"/>
+                        <Text size="0.8" content="💾저장" onClick={save}/>
+                        <Text size="0.8" content="⚙️ 설정"/>
+                        <Text size="0.8" content="추가하기 ▷"/>
+                    </Row>
 
-        //             <div className="row" style={{width:'100%',justifyContent:'space-evenly'}}>
-        //                 <div className="layerButton"><Button defaultText="◁ 이전으로"/></div>
-        //                 <div className="layerButton"
-        //                 ><Button defaultText="💾저장"/></div>
-        //                 {/* <div className="layerButton"><Button defaultText="⚙️ 설정"/></div> */}
-        //                 <div className="layerButton"><Button defaultText="추가하기 ▷"/></div>
-        //             </div>
-        //             <Link href="/menu">PREV</Link>
-
-        //         </div>
-        //     </div>
-        // </div>
-        0
+                    <Link href="/menu">
+                        <Text size="0.8" content="PREV" style={{color:"blue"}}/>
+                    </Link>
+                </Column>
+              </Size>
+            </Center>
+        </Size>
     );
 }

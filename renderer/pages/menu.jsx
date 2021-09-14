@@ -23,7 +23,7 @@ function Menu() {
 
           <Link href="/watertap">
               <Size height="3em" width="100%">
-               <Button className="buttonHoverAnimation">
+               <Button borderStyle="solid" className="buttonHoverAnimation">
                   <Center>
                     <Text size="1" weight="bold" content="수도꼭지 틀기"/>
                   </Center>
@@ -32,30 +32,28 @@ function Menu() {
           </Link> 
 
           <Link href="/createmenu">
-             <Size height="3em" width="100%" className={styles.dashBox}>
-               <Center>
-                <Text content="(+)"/>
-               </Center>
+             <Size height="3em" width="100%">
+               <Button borderStyle="dashed" className="buttonHoverTransition">
+                  <Center>
+                   <Text content="(+)"/>
+                 </Center>
+               </Button>
              </Size>
           </Link>
 
           <Link href="/home">
-            <Text content="PREV" style={{color:'blue'}}/>  
+            <Text size="0.8" content="PREV" style={{color:'blue'}}/>  
           </Link>
+          
+          <div onClick={toggleModal}>CLICK</div>
       
       {modal? 
       <div className="layer center">
         <div className="bgShadow"></div>
         <div className="modal">
-        <Text>
-          <div style={{height:200,width:300,textAlign:'center',padding:24}}>
-            <div class="row" style={{justifyContent:'space-around'}}>
-
-            </div>
-            <Button onClick={toggleModal} border="">생성</Button>
-            <Button onClick={toggleModal} border="">취소</Button>
-          </div>
-        </Text>
+          {/* <Size height="30%" width="30%"> */}
+            <Button onClick={toggleModal}>생성</Button>
+          {/* </Size> */}
         </div>
       </div> 
       :""}
