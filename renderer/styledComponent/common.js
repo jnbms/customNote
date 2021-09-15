@@ -29,6 +29,7 @@ const Size = styled.div`
 const Text = styled.div`
     font-size: ${props => props.size}em;
 `
+// 태그 상하에 둘 경우 margin-top 또는 bottom이고, 태그를 감쌀 경우 margin All.
 const Space = styled.div`
     margin: ${props => props.margin}em;
     padding: ${props => props.padding}em;
@@ -50,5 +51,15 @@ const Center = styled.div`
 // 레이아웃 관련 값은 HEIGHT/WIDTH 100%를 상속한다.
 // SIZE -> LAYOUT 순으로 작성된다.
 // LAYOUT -> SIZE 순으로 작성이 순서가 깔끔하므로 방법을 찾아보도록.
-export {Column, Row, Size, Space, Center};
-export { Text, Button};
+
+
+// 모달 기능은 구현 X
+const layer = styled(Center)`
+    position: absolute;
+    visibility: ${props => props.visible};
+    display: ${props => props.visible == "visible" ? "block" : "none"};
+`
+
+export {Column, Row, Size, Space, Center, layer};
+export {Text, Button};
+

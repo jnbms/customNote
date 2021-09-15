@@ -20,11 +20,10 @@ export default function Createmenu() {
 
     const title = useInput();
     const subtitle = useInput();
-    const save = () => {
-        console.log(title.value, subtitle.value);
-    }
-    const obj = {
+
+    const Obj = {
         title: "제목",
+        discription: "설명",
         subtitle : [
         {
             id: 1,
@@ -41,30 +40,34 @@ export default function Createmenu() {
     return (
         <Size height="100vh">
            <Center>
-                <Size width="50%" height="50%">
-                     <Column justify="center" align="center" style={{gap:16}}>
+                <Size width="60%" height="30%">
+                     <Column justify="center" align="center" style={{gap:8}}>
                          
-                        <Column align="flex-start" style={{gap:8}}>
+                        <Column align="flex-start" style={{gap:4}}>
                             <Text size="1.1" content="제목."/>
                             <Textarea {...title}></Textarea>
                         </Column>
 
-                        <Column align="flex-start" style={{gap:8}}>
+                        <Column align="flex-start" style={{gap:4}}>
                         <Text size="1.1" content="설명."/>
                             <Textarea {...subtitle}></Textarea>
                         </Column>
 
                     {/* PAGE에 바로 오지 않고 molecules로 제작하여 가져오도록 수정. */}
-                    <Row justify="space-evenly" className="buttonGroupHoverScale">
-                        <Text size="0.8" content="◁ 이전으로"/>
-                        <Text size="0.8" content="💾저장" onClick={save}/>
-                        <Text size="0.8" content="⚙️ 설정"/>
-                        <Text size="0.8" content="추가하기 ▷"/>
-                    </Row>
+                    <Size height="10%" width="100%">
+                        <Row justify="space-evenly" className="buttonGroupHoverScale">
+                            <Link href="/menu"><Text size="0.8" content="◁ 이전으로"/></Link>
+                            <Text size="0.8" content="💾저장"/>
+                            <Text size="0.8" content="⚙️ 설정"/>
+                            <Text size="0.8" content="추가하기 ▷"/>
+                        </Row>
+                    </Size>
 
-                    <Link href="/menu">
-                        <Text size="0.8" content="PREV" style={{color:"blue"}}/>
-                    </Link>
+                    {/* <Row>
+                        <Link href="/menu">
+                            <Text size="0.8" content="PREV" style={{color:"blue"}}/>
+                        </Link>
+                    </Row> */}
                 </Column>
               </Size>
             </Center>

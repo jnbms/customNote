@@ -7,7 +7,6 @@ import Input from '../components/atoms/input/input';
 
 import Text from '../bones/Text';
 
-
 function Home() {
   return (
         <Size height="100vh">

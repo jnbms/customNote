@@ -1,45 +1,19 @@
-@import '../../../public/styles/mixin.scss';
-
-.title{
-    margin: 8px;
-}
-.tools{
-
-    display: flex;
-    flex-direction: column;
-
-    width: 525px;
-    margin: 4px;
-
-    padding: 8px;
-    text-align: center;
-
-}
-.view{
-
-    width: 525px;
-
-    margin: 4px;
-
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+// @import '../../../public/styles/mixin.scss';
 .textarea{
-    @include clickAnimation();
-
+    // @include clickAnimation();
     resize:none;
     outline: none;
     border: 1px solid rgb(100, 100, 100);
     font-family: happy;
     font-size: 24px;
-    // height:auto;
-    width: 500px;
-    padding: 12px;
-    margin: 8px;
-    max-height: 500px;
+    max-height: 90%;
 
-    // background: repeating-linear-gradient(to bottom,rgba(255, 255, 255, 0) 45%,rgb(0, 0, 0) 100%);
+    // clickAnimation
+        box-shadow: 4px 4px rgb(0, 0, 0, 0.125);
+        transform:translate(-4px,-4px);
+        &:active{
+            box-shadow: 0px 0px rgb(0, 0, 0, 0.125);
+            transform: translate(0px,0px);
+        }
 }
 

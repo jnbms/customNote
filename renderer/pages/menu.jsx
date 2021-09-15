@@ -1,18 +1,14 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
-import styles from '../public/styles/pages/menu.module.scss'
-// import Text from '../components/atoms/text/text';
-// import Button from '../components/atoms/button/button';
-import Input from '../components/atoms/input/input';
-import Textarea from '../components/atoms/textarea/textarea';
-
-import {Column, Row, Size, Button, Space, Center} from '../styledComponent/common';
+import {Column, Size, Button, Center} from '../styledComponent/common';
 import Text from '../bones/Text';
 
 function Menu() {
 
-  const [modal, setModal] = useState(false);
-  const toggleModal = () => { modal == true ? setModal(false) : setModal(true);};
+  // useToggle
+  // const [modal, setModal] = useState(false);
+  // const toggleModal = () => { modal == true ? setModal(false) : setModal(true);};
+  
   return (
     <Size height="100vh">
       <Center>
@@ -45,18 +41,18 @@ function Menu() {
             <Text size="0.8" content="PREV" style={{color:'blue'}}/>  
           </Link>
           
-          <div onClick={toggleModal}>CLICK</div>
+          {/* <div onClick={toggleModal}>CLICK</div>
       
       {modal? 
       <div className="layer center">
         <div className="bgShadow"></div>
         <div className="modal">
-          {/* <Size height="30%" width="30%"> */}
+          <Size height="30%" width="30%">
             <Button onClick={toggleModal}>생성</Button>
-          {/* </Size> */}
+          </Size>
         </div>
       </div> 
-      :""}
+      :""} */}
 
         </Column>
        </Size>
